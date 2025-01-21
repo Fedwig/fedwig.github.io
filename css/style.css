@@ -1,5 +1,5 @@
 body {
-    font-family: 'Source Code Pro';
+    font-family: 'Source Code Pro', monospace;
     color: #fff; 
     line-height: 1.6;
     margin: 0;
@@ -57,13 +57,36 @@ body {
     filter: brightness(1.2); 
 }
 
-/* Title Styling */
 .title-container h1 {
+    position: relative;
     font-size: 3.5rem;
     font-weight: bold;
     color: #a10505; 
     letter-spacing: 2px;
     margin-bottom: 10px;
+    display: inline-block;
+}
+
+.title-container h1::after {
+    content: '|';
+    position: absolute;
+    right: -10px;
+    top: 0;
+    animation: blink 0.7s steps(2, start) infinite;
+    font-size: 3.5rem;
+    color: #a10505;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .title-container h3 {
@@ -73,7 +96,6 @@ body {
     letter-spacing: 1px;
 }
 
-/* Link Styling */
 .links-container ul {
     list-style: none;
     display: flex;
@@ -90,7 +112,7 @@ body {
     position: relative;
     display: inline-block;
     text-decoration: none;
-    background-color: hsl(0, 0%, 4%, 0.5);
+    background-color: hsla(0, 0%, 4%, 0.5);
     color: #d90000; 
     padding: 10px 25px;
     border: 2px solid #d90000;
@@ -164,24 +186,51 @@ body {
 }
 
 .console-container {
-  font-family: 'Oswald'; 
-  font-weight: bold;
-  font-size: 5em;
-  text-align: center;
-  height: 175px;
-  width: 600px;
-  display: block;
-  color: white;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
+    font-family: 'Oswald', sans-serif; 
+    font-weight: bold;
+    font-size: 5em;
+    text-align: center;
+    height: 175px;
+    width: 600px;
+    display: block;
+    color: white;
+    margin: auto;
 }
 
 .console-underscore {
-  display:inline-block;
-  position:relative;
-  top:-0.14em;
-  left:-5px;
+    display: inline-block;
+    position: relative;
+    top: -0.14em; 
+    left: -5px;
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    .avatar-container img:hover {
+        transform: none;
+        box-shadow: none;
+        filter: none;
+    }
+
+    .title-container h1 {
+        font-size: 2.5rem;
+    }
+    
+    .title-container h3 {
+        font-size:1.5rem;
+    }
+
+    .console-container {
+        font-size: 4rem;
+        width: 90%;
+    }
+
+    .button {
+        font-size: 1rem;
+        padding: 8px 20px;
+    }
 }
