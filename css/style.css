@@ -1,18 +1,19 @@
 body {
     font-family: 'Source Code Pro', monospace;
-    color: #fff; 
+    color: #fff;
     line-height: 1.6;
     margin: 0;
     padding: 0;
+    background-color: #333; /* Fallback background color */
     background-image: url("../assets/images/background.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    min-height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 @keyframes slideInFadeIn {
